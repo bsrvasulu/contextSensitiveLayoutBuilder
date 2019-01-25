@@ -1,0 +1,115 @@
+﻿
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12 page-header" style="margin-top: 20px">
+        <div class="col-lg-9">
+            <h2>{{title}}</h2>
+        </div>
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-10">
+            <label>Edit Hotspot: </label>
+            <div class="switcher switcher-green" style="vertical-align: middle; margin-right: 11px;">
+                <input type="checkbox" name="switcher_checkbox_1" id="hotspot-edit-chk" value="0">
+                <label for="hotspot-edit-chk"></label>
+            </div>
+            <span style="vertical-align: middle; margin-right: 7px;">
+                <div class="radio radio-css radio-inline" style="margin: 0px;">
+                    <input type="radio" name="hsTypeRadio" id="imageRadio" value="image" checked="">
+                    <label for="imageRadio">Image</label>
+                </div>
+                <div class="radio radio-css radio-danger radio-inline">
+                    <input type="radio" name="hsTypeRadio" id="pointRadio" value="point">
+                    <label for="pointRadio">Point</label>
+                </div>
+            </span>
+
+
+
+            <button type="button" id="addHSbtn"  class="btn btn-default" disabled><i style="color: green;" class="fas fa-lg fa-fw m-r-10 fa-plus"></i>Add</button>
+            <button type="button" id="removeHSbtn" class="btn btn-default" disabled><i style="color: red;" class="fas fa-lg fa-fw m-r-10 fa-times"></i>Remove</button>
+        </div>
+     </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-8">
+        <div id='plant-hs-layout' class="outfit container" >
+            <!--<div class="image-overlay overlay-image hotspotImage" style="">-->
+                <!--<img id="hs-2" class="hot-spot" src="/images/settings.svg" style="left: 47em; top: 11em; width: 2.2em;"/>-->
+                <!--&lt;!&ndash;<i id="hs-2" class="hot-spot fas fa-cash-register fa-2x" style="color: rgba(255,17,25,0.69);"></i>&ndash;&gt;-->
+                <!--&lt;!&ndash;<i class="fas chart-bar fa-2x" style="color: Dodgerblue;"></i>&ndash;&gt;-->
+            <!--</div>-->
+            <!--<div class="image-overlay overlay-image hotspotImage" style="">-->
+                <!--<img id="hs-3" class="hot-spot" src="/images/3d-printer.svg" style="left: 27em; top:9em; width: 2.2em;"/>-->
+                <!--&lt;!&ndash;<i id="hs-3" class="hot-spot far fa-address-card fa-2x" style="left: 13.5em; top: 5em; color:  rgba(255,17,25,0.69);"></i>&ndash;&gt;-->
+            <!--</div>-->
+            <!--<img id="layoutPlant" src="/images/plant-layout.jpg" data-zoom-image="/images/plant-layout.png"/>-->
+            <!--&lt;!&ndash;<img id="zoom_07" src="small/image1.png" data-zoom-image="large/image1.jpg"/>&ndash;&gt;-->
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div id="et-slider-wrapper" class="et-map-post ui-draggable ui-draggable-handle" style="margin-left: 3em;">
+            <div id="et-map-slides">
+                <div class="et-map-slide et-active-map-slide">
+                    <div class="thumbnail">
+                        <img id="side-details" src="/images/sputter.jpg" alt="Sputter" width="480" height="240"> <div class="et-description">
+                        <!--<h1><a href="/reception">Reception</a></h1>-->
+                        <p id='side-details-middleid'>SV 702</p>
+                        <!--<span class="et-rating"><span style="width: 42px;"></span></span>-->
+                    </div>
+                    <div class="et-date-wrapper"><span id='side-details-topid' class="et-date">Sputter Area</span></div></div>
+                    <div class="et-map-postmeta" id='side-details-bottontitleid'>SV 702</div>
+                    <div class="et-place-content">
+                        <div class="et-place-text-wrapper">
+                            <div class="et-place-main-text">
+                                <!--<div class="scrollbar" style="height: 119px;"><div class="track" style="height: 119px;"><div class="thumb" style="top: 0px; height: 22.1266px;"><div class="end"></div></div></div></div>-->
+                                <div class="viewport">
+                                    <div class="overview" style="top: 0px;">
+                                        <p id='side-details-details'>Contact Joe </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<a class="more" href="https://www.elegantthemes.com/preview/Explorable/listing/monument-valley/">More Information<span>»</span></a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    function  enableDisableButton() {
+        var isChecked = ($('#hotspot-edit-chk').is(':checked'));
+        if (isChecked) {
+            $('#addHSbtn').removeAttr("disabled").button('refresh');
+            $('#removeHSbtn').removeAttr("disabled").button('refresh');
+            $( ".hot-spot" ).draggable( 'enable' );
+        }
+        else {
+            $('#addHSbtn').attr("disabled", "disabled").button('refresh');
+            $('#removeHSbtn').attr("disabled", "disabled").button('refresh');
+            $( ".hot-spot" ).draggable( 'disable' );
+        }
+    }
+
+    $(document).ready(function ()
+    {
+        $('#hotspot-edit-chk').change(function() {
+            //if($(this).is(":checked")) {
+                enableDisableButton();
+                //$(this).attr("checked", returnVal);
+            //}
+        });
+
+    });
+</script>

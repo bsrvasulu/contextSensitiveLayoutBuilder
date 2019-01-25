@@ -1,0 +1,116 @@
+﻿
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12 page-header" style="margin-top: 20px">
+        <div class="col-lg-9">
+            <h2>{{title}}</h2>
+        </div>
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-9">
+            <label>Edit Hotspot: </label>
+            <div class="switcher switcher-green" style="vertical-align: middle; margin-right: 11px;">
+                <input type="checkbox" name="switcher_checkbox_1" id="hotspot-edit-chk" value="0">
+                <label for="hotspot-edit-chk"></label>
+            </div>
+            <span style="vertical-align: middle; margin-right: 7px;">
+                <div class="radio radio-css radio-inline" style="margin: 0px;">
+                    <input type="radio" name="hsTypeRadio" disabled id="imageRadio" value="image" checked="">
+                    <label for="imageRadio">Image</label>
+                </div>
+                <div class="radio radio-css radio-danger radio-inline">
+                    <input type="radio" name="hsTypeRadio" disabled id="pointRadio" value="point">
+                    <label for="pointRadio">Point</label>
+                </div>
+                <div class="radio radio-css radio-danger radio-inline">
+                    <input type="radio" name="hsTypeRadio" disabled id="rectangleRadio" value="rectangle">
+                    <label for="rectangleRadio">Rectangle</label>
+                </div>
+            </span>
+            <input class="form-control" type="text" disabled id="hotspotIdentifier" name="hotspot-Identifier" placeholder="Hotspot Identifier" required="true" style="display: inline-block; width: 200px;">
+
+
+            <button type="button" id="addHSbtn"  class="btn btn-default" disabled><i style="color: green;" class="fas fa-lg fa-fw m-r-10 fa-plus"></i>Add</button>
+            <button type="button" id="removeHSbtn" class="btn btn-default" disabled><i style="color: red;" class="fas fa-lg fa-fw m-r-10 fa-times"></i>Remove</button>
+            <span >
+                <label class="btn btn-default btn-file " style="font-size: 14px;"><i
+                        class="fa fa-file-image"
+                        style="padding-right: 3px; color: green"></i>
+                    Load plant layout
+                    <input type="file" style="display: none;"
+                           onchange="angular.element(this).scope().setPlanrLayout(event)"
+                           ng-model="plantLayoutSrc" single>
+                </label>
+            </span>
+        </div>
+        <div class="col-lg-3">
+            <button type="button" id="saveHSLayout" class="btn btn-default" style="float:right;"><i style="color: green;" class="fas fa-lg fa-fw m-r-10 fa-save"></i>Save layout</button>
+            <button type="button" id="jsonHSLayout" class="btn btn-default" style="float:right; margin-right: 7px;"><i style="color: green;" class="fas fa-lg fa-fw m-r-10 fa-check"></i>Show layout</button>
+        </div>
+     </div>
+    <div class="modal fade" id="modal-dialog" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Layout</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <span id="model-body-msgid">Select plant layout before edit hotspots.</span>
+                        <textarea id = "jsonTextId" class="form-control" rows="11"></textarea>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-success" data-dismiss="modal">Close</a>
+                    <!--<a href="javascript:;" class="btn btn-success">Action</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-8">
+        <div id='plant-hs-layout' class="outfit container" >
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    // function  enableDisableButton() {
+    //     var isChecked = ($('#hotspot-edit-chk').is(':checked'));
+    //     if (isChecked) {
+    //         $('#addHSbtn').removeAttr("disabled").button('refresh');
+    //         $('#removeHSbtn').removeAttr("disabled").button('refresh');
+    //         $("input[name='hsTypeRadio']").removeAttr("disabled");
+    //         $('#hotspotIdentifier').removeAttr("disabled");
+    //         $( ".hot-spot" ).draggable( 'enable' );
+    //     }
+    //     else {
+    //         $('#addHSbtn').attr("disabled", "disabled").button('refresh');
+    //         $('#removeHSbtn').attr("disabled", "disabled").button('refresh');
+    //         $( "input[name='hsTypeRadio']").attr("disabled", "disabled");
+    //         $('#hotspotIdentifier').attr("disabled", "disabled");
+    //         $( ".hot-spot" ).draggable( 'disable' );
+    //     }
+    // }
+
+    // $(document).ready(function ()
+    // {
+    //     $('#hotspot-edit-chk').change(function() {
+    //         enableDisableButton();
+    //     });
+    //
+    // });
+</script>

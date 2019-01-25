@@ -1,0 +1,19 @@
+{
+  "name": "HotSpotLayout",
+  "version": "0.0.0",
+  "description": "HotSpotLayout",
+  "main": "app.js",
+  "author": {
+    "name": "Sreeni",
+    "email": ""
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "bunyan": "^1.8.5",
+    "express": "^4.14.0",
+    "nconf": "^0.8.4",
+    "vash": "^0.12.2"
+  },
+  "devDependencies": {
+  }
+}

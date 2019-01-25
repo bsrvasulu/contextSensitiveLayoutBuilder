@@ -1,0 +1,15 @@
+{
+  "name": "HotSpotLayout",
+  "version": "0.0.0",
+  "description": "\"HotSpotLayout\"",
+  "authors": [
+    "Sreeni"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "angular": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "bootstrap": "^3.3.7"
+  }
+}

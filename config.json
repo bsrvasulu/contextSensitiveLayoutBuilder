@@ -1,0 +1,14 @@
+{
+  "logsettings": {
+    "name": "HotSpotLayout",
+    "streams": [
+      {
+        "level": "info",
+        "type": "rotating-file",
+        "path": "HotSpotLayout.log",
+        "period": "1d",
+        "count": 20
+      }
+    ]
+  }
+}
